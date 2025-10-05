@@ -61,9 +61,9 @@ php artisan serve
 ## Navigasi Aplikasi
 Aplikasi akan tersedia di http://127.0.0.1:8000/.
 
-Landing Page (Utama): / (Mengarahkan ke Daftar Mata Kuliah)
+Landing Page (Utama): / (Mengarahkan ke Dashboard)
 
-Dashboard Statistik: /dashboard
+Dashboard Berisi Statistik: /dashboard
 
 Daftar Dosen: /dosen
 
