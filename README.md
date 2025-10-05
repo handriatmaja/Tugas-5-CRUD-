@@ -1,4 +1,4 @@
-## Tugas CRUD Laravel: Sistem Manajemen Dosen & Mata Kuliah
+# Tugas CRUD Laravel: Sistem Manajemen Dosen & Mata Kuliah
 
 Aplikasi web untuk mengelola data Dosen dan Mata Kuliah menggunakan Laravel, dilengkapi fitur seeding, relasi, validasi spesifik, dan dashboard statistik.
 
@@ -9,14 +9,25 @@ Aplikasi web untuk mengelola data Dosen dan Mata Kuliah menggunakan Laravel, dil
 Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal.
 Pastikan Anda memiliki Composer dan PHP yang terinstal.
 
-1. Konfigurasi Lingkungan (.env)
+
+### 1. Kloning Repositori dan Instalasi Dependensi
+
+Pastikan Anda memiliki Composer dan PHP yang terinstal.
+1. Kloning repositori GitHub:
+git clone [URL_REPOSITORI_ANDA]
+cd crud-app
+
+2. Instal paket PHP yang diperlukan:
+composer install
+
+### 2. Konfigurasi Lingkungan (.env)
 Buat file .env dari contoh yang tersedia dan buat Application Key:
 
 cp .env.example .env
-php artisan key:generate
+php  artisan key:generate
 
 
-2. Konfigurasi Database
+### 3. Konfigurasi Database
 Buka file .env dan sesuaikan detail koneksi database Anda.
 Ganti baris-baris ini sesuai dengan setup lokal Anda:
 
@@ -28,20 +39,20 @@ DB_USERNAME=root
 DB_PASSWORD=  #Biasanya tanpa menggunakan password
 
 
-3. Migrasi, Seeding, dan Pembersihan Cache (Langkah Kunci)
+### 4. Migrasi, Seeding, dan Pembersihan Cache (Langkah Kunci)
 Jalankan perintah ini untuk membuat tabel (dosens dan mata_kuliahs) dan mengisi data dummy. Perintah composer dump-autoload -o dan migrate:fresh sangat penting agar class dan relasi terdeteksi dengan benar.
 
-#Bersihkan cache konfigurasi Laravel
+#Bersihkan cache konfigurasi Laravel:
 php artisan config:clear
 
-#Hapus cache Composer dan paksa rebuild class map
+#Hapus cache Composer dan paksa rebuild class map:
 composer dump-autoload -o
 
-#Hapus semua tabel lama, jalankan migrasi, dan seed data dummy
+#Hapus semua tabel lama, jalankan migrasi, dan seed data dummy:
 php artisan migrate:fresh --seed
 
 
-4. Menjalankan Server
+### 5. Menjalankan Server
 Setelah database siap, Anda dapat menjalankan aplikasi:
 
 php artisan serve
